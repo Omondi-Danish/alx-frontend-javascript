@@ -1,7 +1,4 @@
-// task_3/js/main.ts
-
 /// <reference path="./crud.d.ts" />
-
 import { RowID, RowElement } from "./interface";
 import * as CRUD from "./crud";
 
@@ -11,17 +8,12 @@ const row: RowElement = {
   lastName: "Salva",
 };
 
-// Step 2: Insert the row and capture returned RowID
+// Step 2: Insert the row and store the returned ID
 const newRowID: RowID = CRUD.insertRow(row);
 
-// Step 3: Create an updated row with age added
-const updatedRow: RowElement = {
-  ...row,
-  age: 23,
-};
+// Step 3: Create an updated row using object spread syntax
+const updatedRow: RowElement = { ...row, age: 23 };
 
-// Step 4: Update row with new data
+// Step 4: Call updateRow and deleteRow
 CRUD.updateRow(newRowID, updatedRow);
-
-// Step 5: Delete the row
 CRUD.deleteRow(newRowID);
