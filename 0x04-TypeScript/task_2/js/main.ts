@@ -1,4 +1,4 @@
-// Define interfaces
+// Interfaces for Director and Teacher
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
@@ -11,7 +11,7 @@ interface TeacherInterface {
   workTeacherTasks(): string;
 }
 
-// Director class
+// Director class implementing interface
 class Director implements DirectorInterface {
   workFromHome(): string {
     return "Working from home";
@@ -24,7 +24,7 @@ class Director implements DirectorInterface {
   }
 }
 
-// Teacher class
+// Teacher class implementing interface
 class Teacher implements TeacherInterface {
   workFromHome(): string {
     return "Cannot work from home";
@@ -37,7 +37,7 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// Function to create an employee
+// createEmployee function
 export function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === "number" && salary < 500) {
     return new Teacher();
@@ -45,7 +45,7 @@ export function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-// ✅ Type predicate for Director
+// ✅ Explicitly export isDirector as type predicate
 export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
@@ -58,10 +58,10 @@ export function executeWork(employee: Director | Teacher): string {
   return employee.workTeacherTasks();
 }
 
-// ✅ String literal type for Subjects
+// ✅ Explicitly define string literal type
 export type Subjects = "Math" | "History";
 
-// ✅ teachClass explicitly with todayClass: Subjects
+// ✅ teachClass with explicit type annotation todayClass: Subjects
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
