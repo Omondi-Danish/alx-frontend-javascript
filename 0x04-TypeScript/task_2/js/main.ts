@@ -45,7 +45,7 @@ export function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-// ✅ Exported isDirector function (type predicate)
+// ✅ Type predicate for Director
 export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
@@ -54,23 +54,17 @@ export function isDirector(employee: Director | Teacher): employee is Director {
 export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
-  } else {
-    return employee.workTeacherTasks();
   }
+  return employee.workTeacherTasks();
 }
 
 // ✅ String literal type for Subjects
 export type Subjects = "Math" | "History";
 
-// ✅ Exported teachClass function
+// ✅ teachClass explicitly with todayClass: Subjects
 export function teachClass(todayClass: Subjects): string {
-  if (todayClass === "Math") return "Teaching Math";
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
   return "Teaching History";
 }
-
-// Example calls (can be left for manual testing)
-console.log(executeWork(createEmployee(200))); // Getting to work
-console.log(executeWork(createEmployee(1000))); // Getting to director tasks
-
-console.log(teachClass("Math"));    // Teaching Math
-console.log(teachClass("History")); // Teaching History
