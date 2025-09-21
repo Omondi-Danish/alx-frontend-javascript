@@ -2,7 +2,7 @@
 
 namespace Subjects {
   export class Subject {
-    teacher: Teacher;
+    teacher:Teacher;
 
     // ✅ Explicitly type parameter & mark as public method
     public setTeacher(teacher:Teacher): void {
