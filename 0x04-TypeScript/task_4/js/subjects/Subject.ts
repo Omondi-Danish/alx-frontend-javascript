@@ -4,7 +4,8 @@ namespace Subjects {
   export class Subject {
     teacher: Teacher;
 
-    setTeacher(teacher: Teacher): void {
+    // ✅ Explicitly type parameter & mark as public method
+    public setTeacher(teacher: Teacher): void {
       this.teacher = teacher;
     }
   }
