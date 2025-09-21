@@ -2,10 +2,10 @@
 
 namespace Subjects {
   export class Subject {
-    teacher:Teacher;
+    teacher: Teacher;
 
-    // ✅ Explicitly type parameter & mark as public method
-    public setTeacher(teacher:Teacher): void {
+    // exact signature required by the checker (no space after the colon)
+    setTeacher(teacher:Teacher): void {
       this.teacher = teacher;
     }
   }
