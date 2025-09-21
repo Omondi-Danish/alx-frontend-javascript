@@ -43,4 +43,4 @@ const director1: Director = {
 };
 
 console.log(director1);
-console.log(printTeacher('John', 'Doe')); // Output: John. Doe
+console.log(printTeacher({ firstName, lastName }); // Output: John. Doe
