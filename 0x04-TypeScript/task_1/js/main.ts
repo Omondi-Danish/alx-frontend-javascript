@@ -23,6 +23,25 @@ function printTeacher(firstName: string, lastName: string): string {
   return `${firstName}. ${lastName}`;
 }
 
+// Define StudentClass
+class StudentClass {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
 // Example usage
 const teacher3: Teacher = {
   firstName: 'John',
@@ -43,4 +62,8 @@ const director1: Director = {
 };
 
 console.log(director1);
-console.log(printTeacher({ firstName, lastName }); // Output: John. Doe
+console.log(printTeacher({ firstname, lastename }); // Output: John. Doe
+
+const student = new StudentClass('Alice', 'Wanjiku');
+console.log(student.workOnHomework()); // Output: Currently working
+console.log(student.displayName());    // Output: Alice Wanjiku
