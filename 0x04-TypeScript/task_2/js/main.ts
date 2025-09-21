@@ -1,5 +1,3 @@
-// task_2/js/main.ts
-
 // 1. DirectorInterface
 interface DirectorInterface {
   workFromHome(): string;
@@ -46,8 +44,10 @@ class Teacher implements TeacherInterface {
 
 // 5. createEmployee function
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
-    return new Teacher();
+  if (typeof salary === "number") {
+    if (salary < 500) {
+      return new Teacher();
+    }
   }
   return new Director();
 }
@@ -72,7 +72,7 @@ type Subjects = "Math" | "History";
 const todayClass: Subjects = "Math";
 
 // 10. teachClass function
-function teachClass(todayClass:Subjects): string {
+function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
