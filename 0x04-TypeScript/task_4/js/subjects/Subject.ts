@@ -5,7 +5,7 @@ namespace Subjects {
     teacher: Teacher;
 
     // Required setter method (exact signature)
-    setTeacher(teacher:Teacher):
+    setTeacher(teacher:Teacher)
     void {
       this.teacher = teacher;
     }
