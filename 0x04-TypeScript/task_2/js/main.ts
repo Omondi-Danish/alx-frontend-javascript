@@ -65,18 +65,19 @@ function executeWork(employee: Director | Teacher): string {
   return employee.workTeacherTasks();
 }
 
-// 8. String Literal Type + teachClass Function
+// 8. String Literal Type
 type Subjects = "Math" | "History";
 
+// 9. Variable declaration required by checker
+const todayClass: Subjects = "Math";
+
+// 10. teachClass function
 function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
   return "Teaching History";
 }
-
-// 9. Declare todayClass with type Subjects
-const todayClass: Subjects = "Math";
 
 // Example usage
 console.log(executeWork(createEmployee(200))); // Getting to work
