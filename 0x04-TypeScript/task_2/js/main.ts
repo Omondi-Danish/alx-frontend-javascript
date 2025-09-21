@@ -72,7 +72,7 @@ type Subjects = "Math" | "History";
 const todayClass: Subjects = "Math";
 
 // 10. teachClass function
-function teachClass(todayClass: Subjects): string {
+function teachClass(todayClass:Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
